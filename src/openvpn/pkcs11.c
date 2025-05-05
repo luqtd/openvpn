@@ -227,7 +227,12 @@ _pkcs11_openvpn_token_prompt(
 
 struct user_pass token_pass; /* GLOBAL */
 
-void pkcs11_password_setup(const char* pkcs11_pin_file) {
+void 
+pkcs11_password_setup(
+    const char* pkcs11_pin_file
+    ) 
+{
+    msg(M_INFO, "pkcs11_password_setup - entered - pkcs11_pin_file='%s'", pkcs11_pin_file);
     token_pass.defined = false;
     token_pass.nocache = true;
 
@@ -254,7 +259,7 @@ _pkcs11_openvpn_pin_prompt(
     )
 {
     char prompt[1024];
-    CLEAR(token_pass);
+    // CLEAR(token_pass);
 
     (void)global_data;
     (void)user_data;
