@@ -646,6 +646,14 @@ init_query_passwords(const struct context *c)
         pem_password_setup(c->options.key_pass_file);
     }
 
+    #ifdef ENABLE_PKCS11
+    /* SMART Card PIN input */
+    if (c->options.pkcs11_pin_file)
+    {
+        pkcs11_password_setup(c->options.pkcs11_pin_file);
+    }
+    #endif
+
     /* Auth user/pass input */
     if (c->options.auth_user_pass_file)
     {

@@ -71,6 +71,11 @@ show_pkcs11_ids(
     bool cert_private
     );
 
+void 
+pkcs11_password_setup(
+    const char* pkcs11_pin_file
+    );
+
 #endif                  /* ENABLE_PKCS11 */
 
 #endif                  /* OPENVPN_PKCS11H_H */
