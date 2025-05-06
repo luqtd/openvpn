@@ -227,10 +227,10 @@ _pkcs11_openvpn_token_prompt(
 
 struct user_pass token_pass; /* GLOBAL */
 
-void 
+void
 pkcs11_password_setup(
-    const char* pkcs11_pin_file
-    ) 
+    const char *pkcs11_pin_file
+    )
 {
     msg(M_INFO, "pkcs11_password_setup - entered - pkcs11_pin_file='%s'", pkcs11_pin_file);
     token_pass.defined = false;
@@ -239,11 +239,11 @@ pkcs11_password_setup(
     if (!strlen(token_pass.password))
     {
         get_user_pass(
-                &token_pass,
-                pkcs11_pin_file,
-                UP_TYPE_PRIVATE_KEY,
-                GET_USER_PASS_MANAGEMENT|GET_USER_PASS_PASSWORD_ONLY
-                );
+            &token_pass,
+            pkcs11_pin_file,
+            UP_TYPE_PRIVATE_KEY,
+            GET_USER_PASS_MANAGEMENT|GET_USER_PASS_PASSWORD_ONLY
+            );
     }
 }
 
@@ -259,7 +259,6 @@ _pkcs11_openvpn_pin_prompt(
     )
 {
     char prompt[1024];
-    // CLEAR(token_pass);
 
     (void)global_data;
     (void)user_data;
@@ -273,8 +272,8 @@ _pkcs11_openvpn_pin_prompt(
     token_pass.nocache = true;
 
     if (
-        !strlen(token_pass.password) &&
-        !get_user_pass(
+        !strlen(token_pass.password)
+        && !get_user_pass(
             &token_pass,
             NULL,
             prompt,

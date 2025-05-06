@@ -85,15 +85,13 @@ PKCS#11 / SmartCard options
   information.
 
 --pkcs11-pin pin
-  Specify the PIN for the PKCS#11 token.
+  Specify the file with the PIN for the PKCS#11 token.
   
     Valid syntax:
     ::
 
       pkcs11-pin file.txt
-      pkcs11-pin 123456
 
   If the PIN is specified from file, the file should contain only the PIN,
   without any additional characters.
-
-  If the PIN is specified from terminal, the user will be prompted to enter it.
+  When ``--pkcs11-pin`` is not specified, the user will be prompted to enter the PIN.

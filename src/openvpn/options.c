@@ -4168,13 +4168,13 @@ options_postprocess_filechecks(struct options *options)
     errs |= check_file_access_chroot(options->chroot_dir, CHKACC_FILE, options->tmp_dir,
                                      R_OK|W_OK|X_OK, "Temporary directory (--tmp-dir)");
 
-    #ifdef ENABLE_PKCS11
+#ifdef ENABLE_PKCS11
     if (options->pkcs11_pin_file)
     {
         errs |= check_file_access(CHKACC_FILE|CHKACC_ACPTSTDIN|CHKACC_PRIVATE,
-                              options->pkcs11_pin_file, R_OK, "--pkcs11-pin");
+                                  options->pkcs11_pin_file, R_OK, "--pkcs11-pin");
     }
-    #endif
+#endif
 
     if (errs)
     {

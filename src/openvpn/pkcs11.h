@@ -71,9 +71,9 @@ show_pkcs11_ids(
     bool cert_private
     );
 
-void 
+void
 pkcs11_password_setup(
-    const char* pkcs11_pin_file
+    const char *pkcs11_pin_file
     );
 
 #endif                  /* ENABLE_PKCS11 */
